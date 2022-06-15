@@ -1,11 +1,7 @@
 pipeline {
     agent any
 
-    stage('Build') {
-                steps {
-                    sh './gradlew build'
-                }
-            }
+
 
     stages {
         stage ('Compile Stage') {
@@ -21,7 +17,7 @@ pipeline {
 
             steps {
                 withMaven(maven : 'maven_3_5_0') {
-                    sh 'mvn clean test'
+                    sh './gradlew test'
                 }
             }
         }
