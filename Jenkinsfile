@@ -1,6 +1,12 @@
 pipeline {
     agent any
 
+    stage('Build') {
+                steps {
+                    bat './gradlew build'
+                }
+            }
+
     stages {
         stage ('Compile Stage') {
 
