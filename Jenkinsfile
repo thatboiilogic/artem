@@ -12,9 +12,10 @@ pipeline {
                 }
             }
         }
-     stage('Build')
-     {
-      echo "Building the code"
+     stage('Build') {
+     steps{
+      sh 'mvn clean install'
+     }
      }
         stage ('Testing Stage') {
 
