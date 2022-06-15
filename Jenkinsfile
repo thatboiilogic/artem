@@ -12,8 +12,11 @@ pipeline {
                 }
             }
         }
-
-        stage ('Testing') {
+     stage('Build')
+     {
+      echo "Building the code"
+     }
+        stage ('Testing Stage') {
 
             steps {
                 withMaven(maven : 'maven_3_5_0') {
